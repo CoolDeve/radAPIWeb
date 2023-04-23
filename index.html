@@ -338,7 +338,7 @@
                                     PRODUCTS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-uppercase" id="smartphn">Smartphones</a>
+                                <a class="nav-link text-uppercase" id="smartphn" onclick="kapil()" >Smartphones</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-uppercase" id="motorcycle">motorcycle</a>
@@ -383,16 +383,19 @@
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-centered">
-                <div class="modal-content" id="thisismydetail">
-                    
-                </div>
-                
+                <div class="modal-content" id="thisismydetail">   
+                </div>                
             </div>
         </div>
             <!-- ------------------------ modal ends here ----------------- -->
-            <div class="row" id="allcard">
+                
+        
+          <div id="loading2" onload="loadhomeProduct()" >
+            <div class="row" id="allcard" > </div>
+                <div id="product_load"></div>     
+          </div>
 
-            </div>
+
         </div>
 
     </div>
@@ -469,8 +472,9 @@
                             <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
 
                             <div class="form-outline form-white mb-4">
-                                <input type="text" id="formControlLg" class="form-control form-control-lg form_search"
-                                    placeholder="Search">
+                                <!-- <input type="text" id="formControlLg" class="form-control form-control-lg form_search "
+                                    placeholder="Search"> -->
+                                    <div class="gcse-search"></div>
 
                                 <div class="form-notch">
                                     <div class="form-notch-leading" style="width: 9px;"></div>
@@ -672,6 +676,8 @@
     <button type="button" class="btn btn-warning btn-floating btn-lg step" style="color: black;" id="btn-back-to-top">
         <i class="bi bi-arrow-up"></i>
     </button>
+    <script async src="https://cse.google.com/cse.js?cx=d56364769382e4512">
+    </script>
     <!-- ------back to top button is closed here -------------- -->
     <script type="text/javascript"
         src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -684,7 +690,12 @@
           setInterval( function loading_body(){
             let loading_web = document.getElementById("loading_data");
             loading_web.style.display = 'none';
-            },2500)  
+            },1000)
+
+            setInterval( function loadhomeProduct(){
+            let loading_web = document.getElementById("product_load");
+            loading_web.style.display = 'none';
+            },3000)   
                 
     </script>
 
